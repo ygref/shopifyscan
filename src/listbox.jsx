@@ -10,7 +10,9 @@ class ListBox extends React.Component {
   }
 
   handleItemClick(item) {
+    const { onModeChange } = this.props;
     this.setState({ selectedItem: item });
+    onModeChange(item);
     // You can perform additional actions here when an item is clicked
   }
 
