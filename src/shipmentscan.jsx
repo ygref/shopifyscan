@@ -1,22 +1,19 @@
 import { useState } from "react";
 
-function BarcodeScanner({ mode }) {
-  const [barcode, setBarcode] = useState("");
+function ShipmentScanner({ mode }) {
+  const [shipment, setShipment] = useState("");
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
-      // Barcode scanned or entered, trigger action
-      searchOrSubmit(barcode, mode);
+      searchOrSubmit(shipment, mode);
     }
   };
 
   const handleButtonClick = () => {
-    // Trigger action when the button is clicked
-    searchOrSubmit(barcode, mode);
+    searchOrSubmit(shipment, mode);
   };
 
   const searchOrSubmit = (value, mode) => {
-    // Implement search or submission logic here
     console.log(`Searching or submitting: ${value} in mode ${mode}`);
   };
 
@@ -24,14 +21,14 @@ function BarcodeScanner({ mode }) {
     <div>
       <input
         type="text"
-        value={barcode}
-        onChange={(event) => setBarcode(event.target.value)}
+        value={shipment}
+        onChange={(event) => setShipment(event.target.value)}
         onKeyDown={handleKeyDown}
-        placeholder="Scan barcode..."
+        placeholder="Find Here..."
       />
       <button onClick={handleButtonClick}>Search/Submit</button>
     </div>
   );
 }
 
-export default BarcodeScanner;
+export default ShipmentScanner;

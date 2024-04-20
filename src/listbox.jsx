@@ -1,5 +1,5 @@
 import React from "react";
-import { getData } from "./dataset";
+import { getScan } from "./dataset";
 
 class ListBox extends React.Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class ListBox extends React.Component {
   }
 
   render() {
-    const items = getData();
+    const items = getScan();
     const { selectedItem } = this.state;
 
     return (

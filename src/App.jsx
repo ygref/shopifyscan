@@ -1,19 +1,21 @@
-import BarcodeScanner from "./barcodescan";
+import ShipmentScanner from "./shipmentscan";
 import ListBox from "./listbox";
-import { getData } from "./dataset";
+import { getScan } from "./dataset";
 import { useState } from "react";
+import ItemScanner from "./itemscan";
 
 export function App() {
   const [mode, setMode] = useState(null);
-  const items = getData();
+  const items = getScan();
 
   const handleModeChange = (selectedMode) => {
     setMode(selectedMode);
   };
   return (
     <div className="App">
-      <BarcodeScanner mode={mode} />
       <ListBox items={items} onModeChange={handleModeChange} />
+      <ShipmentScanner mode={mode} />
+      <ItemScanner />
     </div>
   );
 }
