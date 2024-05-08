@@ -11,10 +11,14 @@ export function App() {
   const handleModeChange = (selectedMode) => {
     setMode(selectedMode);
   };
+
+  const handleShipmentScanned = (scannedShipment) => {
+    console.log("Scanned Shipment:", scannedShipment);
+  };
   return (
     <div className="App">
       <ListBox items={items} onModeChange={handleModeChange} />
-      <ShipmentScanner mode={mode} />
+      <ShipmentScanner onShipmentScanned={handleShipmentScanned} mode={mode} />
       <ItemScanner />
     </div>
   );
